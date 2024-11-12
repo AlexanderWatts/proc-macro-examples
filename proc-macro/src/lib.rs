@@ -59,7 +59,7 @@ pub fn builder(input: TokenStream) -> TokenStream {
         let field_name = &field.ident;
 
         quote! {
-            #field_name: self.#field_name.clone().ok_or(concat!(stringify!(#field_name), "is not set"))?
+            #field_name: self.#field_name.clone().ok_or(concat!(stringify!(#field_name), " ", "is not set"))?
         }
     });
 
